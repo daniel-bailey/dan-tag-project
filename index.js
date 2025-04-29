@@ -1,3 +1,3 @@
 export const SayHello = () => {
-    console.log('hello v1.1.1!');
+    console.log('hello 2.0.0!');
 }
