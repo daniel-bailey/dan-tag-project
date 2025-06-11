@@ -49,5 +49,7 @@ export const ShowBanner = (show, language) => {
       </div>
     </div>
   `;
+
+  document.body.appendChild(banner)
 };
 
