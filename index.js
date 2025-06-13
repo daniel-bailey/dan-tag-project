@@ -21,7 +21,7 @@ export const ShowBanner = (show, language) => {
     bannerText: ''
   };
 
-  if (!language) {
+  if (language) {
     fs.readFile(`/translations/${language}.json`, 'utf8', (err, data) => {
       if (err) {
         //default en.json
@@ -30,6 +30,8 @@ export const ShowBanner = (show, language) => {
         bannerText = data;
       }
     });
+  } else {
+    bannerText = defaultTranslations;
   }
 
   const banner = `
