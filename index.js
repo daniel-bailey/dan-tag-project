@@ -10,41 +10,17 @@ export const crunch = () => {
 }
 
 export const showBanner = () => {
-  const languages = ['en', 'cy', 'ga', 'gd']; //there will be plenty more in here...
-
-  // We will have a folder of translation files, probably JSON or something called en.json, cy.json etc.
-  // roughly how translations would work...
-  /* if (language) {
-    fs.readFile(`/translations/${language}.json`, 'utf8', (err, data) => {
-      if (err) {
-        //default en.json
-        bannerText = defaultTranslations
-      } else {
-        bannerText = data;
-      }
-    });
-  } else {
-    bannerText = defaultTranslations;
-  } */
-
-  let bannerText = defaultTranslations;
   const banner = document.createElement("div");
-  banner.innerHTML = 
-  `
-    <div class="container">
-      <div class="cookie-banner-content">
-        <div class="cookies-banner-text">
-          <h2>${bannerText.headerText}</h2>
-          <p>${bannerText.bannerText}</p>
-        </div>
-        <div class="cookies-banner-buttons">
-          <button>Accept</button>
-          <button>Reject</button>
-          <button>Go to settings</button>
-        </div>
-      </div>
-    </div>
+  banner.innerHTML = `
+    <h2>BBC Cookie</h2>
+    <p>text in here about the cookies etc. blah blah blah
   `;
-  banner.style.cssText = 'position:absolute;width:100%;padding:10px;background:pink;font-size:15px;top:0;z-index:9999;'
+  
+  banner.style.position = 'absolute';
+  banner.style.top = '0';
+  banner.style.backgroundColor = 'pink';
+  banner.style.padding = '10px';
+  banner.style.zIndex = '9999';
+
   document.body.appendChild(banner);
 };
