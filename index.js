@@ -28,23 +28,23 @@ export const showBanner = () => {
   } */
 
   let bannerText = defaultTranslations;
-  const banner = `
-    <div class="cookie-banner">
-      <div class="container">
-        <div class="cookie-banner-content">
-          <div class="cookies-banner-text">
-            <h2>${bannerText.headerText}</h2>
-            <p>${bannerText.bannerText}</p>
-          </div>
-          <div class="cookies-banner-buttons">
-            <button>Accept</button>
-            <button>Reject</button>
-            <button>Go to settings</button>
-          </div>
+  const banner = document.createElement("div");
+  banner.innerHTML = 
+  `
+    <div class="container">
+      <div class="cookie-banner-content">
+        <div class="cookies-banner-text">
+          <h2>${bannerText.headerText}</h2>
+          <p>${bannerText.bannerText}</p>
+        </div>
+        <div class="cookies-banner-buttons">
+          <button>Accept</button>
+          <button>Reject</button>
+          <button>Go to settings</button>
         </div>
       </div>
     </div>
   `;
-
-  document.body.appendChild(banner)
+  banner.style.cssText = 'position:absolute;width:100%;padding:10px;background:pink;font-size:15px;top:0;z-index:9999;'
+  document.body.appendChild(banner);
 };
